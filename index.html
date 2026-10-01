@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Grid | AI Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark"><span>+</span><span>×</span></div>
+      <div class="eyebrow">AI GAME LAB / 01</div>
+      <h1>Neon<br><em>Grid</em></h1>
+      <p class="description">A tactical duel against an adversary that never blinks.</p>
+      <div class="rule"></div>
+      <div class="side-label">MATCH INTEL</div>
+      <div class="intel-list">
+        <div><span>ENGINE</span><strong>MINIMAX</strong></div>
+        <div><span>OPTIMIZER</span><strong>ALPHA-BETA</strong></div>
+        <div><span>LATENCY</span><strong id="latency">READY</strong></div>
+      </div>
+      <p class="tip">Tip <span>↗</span><br><small>Corner openings create the most interesting battles.</small></p>
+    </aside>
+
+    <main class="game-area">
+      <header class="topbar">
+        <div><span class="round-label">ROUND <strong id="roundNumber">01</strong></span><span class="live-dot">LIVE</span></div>
+        <button id="soundToggle" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">♪<span> SOUND</span></button>
+      </header>
+
+      <section class="match-heading">
+        <div><div class="eyebrow">YOUR MOVE, HUMAN</div><h2>Can you outsmart<br>the machine?</h2></div>
+        <div class="mode-readout"><span>DIFFICULTY</span><strong id="difficultyLabel">UNBEATABLE</strong></div>
+      </section>
+
+      <section class="game-info">
+        <div class="info-card active-player"><span>YOU <b class="player-dot"></b></span><strong id="playerSymbol">X</strong><small>HUMAN</small></div>
+        <div class="info-card"><span>AI <b class="ai-dot"></b></span><strong id="aiSymbol">O</strong><small>MINIMAX</small></div>
+        <div class="info-card nodes-card"><span>NODES SEARCHED</span><strong id="nodes">0</strong><small>THIS MOVE</small></div>
+      </section>
+
+      <div id="status" class="status"><span class="status-pip"></span><span>Your turn — make a move</span></div>
+
+      <section id="board" class="board" aria-label="Tic-Tac-Toe board">
+      <button class="cell" data-index="0"></button>
+      <button class="cell" data-index="1"></button>
+      <button class="cell" data-index="2"></button>
+      <button class="cell" data-index="3"></button>
+      <button class="cell" data-index="4"></button>
+      <button class="cell" data-index="5"></button>
+      <button class="cell" data-index="6"></button>
+      <button class="cell" data-index="7"></button>
+      <button class="cell" data-index="8"></button>
+      </section>
+
+      <section class="controls">
+        <button id="restart" class="primary-btn"><span>↻</span> NEW ROUND</button>
+        <label class="select-wrap"><span>MODE</span><select id="difficulty" aria-label="Difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard" selected>Unbeatable AI</option>
+        </select></label>
+        <label class="select-wrap"><span>PLAY AS</span><select id="playerSymbolSelect" aria-label="Choose your symbol">
+        <option value="X" selected>X</option>
+        <option value="O">O</option>
+        </select></label>
+        <button id="resetStats" class="text-btn">RESET SCORE</button>
+      </section>
+
+    <section class="stats">
+      <div><span>YOU</span><strong id="playerWins">0</strong></div>
+      <div><span>DRAW</span><strong id="draws">0</strong></div>
+      <div><span>AI</span><strong id="aiWins">0</strong></div>
+    </section>
+
+    <footer>
+      <p><span>◈</span> EVERY MOVE IS CALCULATED <span>◈</span></p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
